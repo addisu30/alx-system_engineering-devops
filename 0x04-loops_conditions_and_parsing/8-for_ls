@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Bash script that displays content
+for ls in *
+do
+	echo "$ls" | cut -d "-" -f 2
+done
