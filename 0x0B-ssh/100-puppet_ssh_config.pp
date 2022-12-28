@@ -1,14 +1,15 @@
-# Make passwordAuthentication and add new private key
-file_line { 'replace passwordAuthentication':
-  ensure  => 'present',
-  path    => '/etc/ssh/ssh_config',
-  replace => true,
-  line    => 'PasswordAuthentication no',
-  match   => 'PasswordAuthentication yes',
+# make changes to config file using Puppet
+
+include stdlib
+
+file_line { 'Refuse to authenticate using a password':
+  ensure => present,
+  path   => '/etc/ssh/ssh_config',
+  line   => 'PasswordAuthentication no',
 }
 
-file_line { 'add the private key ~/.ssh/school':
-  ensure => 'present',
+file_line { 'Use private key':
+  ensure => present,
   path   => '/etc/ssh/ssh_config',
-  line   => 'IdentityFile ~/.ssh/school',
+  line   => 'IdentityFile ~/.ssh/school'
 }
