@@ -36,7 +36,7 @@ defaults
 
 frontend web-frontend
         bind *:80
-  bind *:443 ssl crt /etc/haproxy/cert/www.addisu.techi
+  bind *:443 ssl crt /etc/haproxy/cert/www.addisu.tech
         mode http
         default_backend web-backend
 
