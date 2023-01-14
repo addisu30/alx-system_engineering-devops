@@ -42,5 +42,5 @@ frontend web-frontend
 
 backend web-backend
 	balance roundrobin
-        server 3433-web-01 54.173.51.68:80 check
+        server 3433-web-01 54.175.60.108:80 check
         server 3433-web-02 54.161.240.173:80 check
