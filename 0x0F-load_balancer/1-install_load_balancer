@@ -4,11 +4,8 @@
 apt-get install -y software-properties-common
 add-apt-repository -y ppa:vbernat/haproxy-2.5
 apt-get update
-<<<<<<< HEAD
-apt-get install -y haproxy=2.5\*
-=======
 apt-get install -y haproxy=2.5.\*
->>>>>>> db1aa50b55cf40c2cf273eda4f1299ba06384093
+
 
 echo "ENABLED=1" >> /etc/default/haproxy
 mv /etc/haproxy/haproxy.cfg{,.original}
