@@ -60,11 +60,12 @@ def store_given_word_hash(w, i, len_w, dict_words, type_d):
     store_given_word_hash(w, i + 1, len_w, dict_words, type_d)
     return None
 
+
 def print_words(w, i, len_wn, dict_words_repeated):
     """Print the repeated strings"""
     if i >= len_wn:
         return None
-    
+
     if w[i][1] > 0:
         print("{}: {}".format(w[i][0], dict_words_repeated[w[i][0]] * w[i][1]))
 
