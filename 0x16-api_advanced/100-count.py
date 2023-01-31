@@ -50,27 +50,25 @@ def store_given_word_hash(w, i, len_w, dict_words, type_d):
     if i >= len_w:
         return None
     if type_d == "r":
-                                                                                                                                if w[i] in dict_words:
-                                                                                                                                    dict_words[w[i]] += 1
-                                                                                                                                else:
-                                                                                                                                    dict_words[w[i]] = 1
+        if w[i] in dict_words:
+            dict_words[w[i]] += 1
+        else:
+            dict_words[w[i]] = 1
     elif type_d == "u":
-                                                                                                                                dict_words[w[i]] = 0
+        dict_words[w[i]] = 0
 
     store_given_word_hash(w, i + 1, len_w, dict_words, type_d)
+    return None
 
-return None
+def print_words(w, i, len_wn, dict_words_repeated):
+    """Print the repeated strings"""
+    if i >= len_wn:
+        return None
+    
+    if w[i][1] > 0:
+        print("{}: {}".format(w[i][0], dict_words_repeated[w[i][0]] * w[i][1]))
 
-
-                                                                                                                                                                                                                def print_words(w, i, len_wn, dict_words_repeated):
-                                                                                                                                                                                                                        """Print the repeated strings"""
-                                                                                                                                                                                                                            if i >= len_wn:
-                                                                                                                                                                                                                                        return None
-
-                                                                                                                                                                                                                                        if w[i][1] > 0:
-                                                                                                                                                                                                                                                    print("{}: {}".format(w[i][0], dict_words_repeated[w[i][0]] * w[i][1]))
-
-                                                                                                                                                                                                                                                        print_words(w, i + 1, len_wn, dict_words_repeated)
+    print_words(w, i + 1, len_wn, dict_words_repeated)
 
                                                                                                                                                                                                                                                             return None
 
