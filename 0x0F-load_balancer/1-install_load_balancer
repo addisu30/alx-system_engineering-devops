@@ -1,10 +1,10 @@
-#!/usr/bin/env bash
+#!/usr/bin/env bah
 #Installs and configures HAproxy in a load balancer server
 
 apt-get install -y software-properties-common
-add-apt-repository -y ppa:vbernat/haproxy-2.4
+add-apt-repository -y ppa:vbernat/haproxy-2.5
 apt-get update
-apt-get install -y haproxy=2.4.\*
+apt-get install -y haproxy=2.5.\*
 
 echo "ENABLED=1" >> /etc/default/haproxy
 mv /etc/haproxy/haproxy.cfg{,.original}
@@ -25,12 +25,11 @@ defaults
     timeout connect  10s
     timeout client  20s
     timeout server  30s
-frontend haproxy-main
+listen hbnb
     bind 0.0.0.0:80
     mode http
     stats enable
     stats uri /haproxy?stats
-backend web-servers
     balance roundrobin
     option httpclose
     option forwardfor
