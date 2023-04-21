@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 # Install haproxy and config 2 server
 apt-get update
-apt-get -y install haproxy=2.0.\*
+apt-get install software-properties-common -y
+add-apt-repository ppa:vbernat/haproxy-2.0 -y
+apt-get update
+apt-get install haproxy=2.0.\* -y
 echo "ENABLED=1" >> /etc/default/haproxy
 sed -i '/504.http/a \\nlisten http-in\n\tbind *:80\n\tmode http\n\tbalance roundrobin\n\tserver 3433-web-01 54.237.44.125:80 check\n\tserver 3433-web-02 35.175.134.1:80 check' /etc/haproxy/haproxy.cfg
 sudo service haproxy start
