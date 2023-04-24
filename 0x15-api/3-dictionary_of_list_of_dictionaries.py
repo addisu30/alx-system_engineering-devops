@@ -24,5 +24,5 @@ if __name__ == "__main__":
             id_report["task"] = str(task.get("title"))
             list_dict_report.append(id_report)
         report[id_em] = list_dict_report
-     with open("todo_all_employees.json", "w") as fjson:
-         fjson.write(json.dumps(report))
+    with open("todo_all_employees.json", "w") as fjson:
+        fjson.write(json.dumps(report))
