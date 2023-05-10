@@ -54,8 +54,8 @@ def store_given_word_hash(w, i, len_w, dict_words, type_d):
             dict_words[w[i]] += 1
         else:
             dict_words[w[i]] = 1
-        elif type_d == "u":
-            dict_words[w[i]] = 0
+     elif type_d == "u":
+         dict_words[w[i]] = 0
 
     store_given_word_hash(w, i + 1, len_w, dict_words, type_d)
     return None
